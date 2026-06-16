@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tafseer Ul Quraan Academy & Arbi Amiya Institute</title>
+
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #1b4d3e;
+            --primary-dark: #113328;
+            --secondary: #cda250;
+            --secondary-light: #f4e6ca;
+            --text-main: #2c3e50;
+            --text-muted: #627486;
+            --bg-light: #fbfbf9;
+            --white: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            text-align: right;
+        }
+
+        .urdu-heavy {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            line-height: 2.6;
+        }
+
+        /* --- NAVIGATION NAVBAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            background-color: rgba(27, 77, 62, 0.98);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 3px solid var(--secondary);
+        }
+
+        .nav-logo {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s;
+            padding: 5px 10px;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Three-line Menu Button (Hamburger) */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 5px;
+        }
+
+        .menu-toggle .bar {
+            width: 28px;
+            height: 3px;
+            background-color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        /* --- HERO BANNER --- */
+        .hero {
+            margin-top: 70px;
+            background: linear-gradient(rgba(17, 51, 40, 0.88), rgba(27, 77, 62, 0.97)),
+                        url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1920') no-repeat center center/cover;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 1.3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .top-lead {
+            font-size: 1.5rem;
+            background: rgba(205, 162, 80, 0.25);
+            border: 1px solid var(--secondary);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* --- FREE FEES ANNOUNCEMENT --- */
+        .free-alert {
+            background: linear-gradient(45deg, #d9534f, #c9302c);
+            color: var(--white);
+            text-align: center;
+            padding: 18px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        /* --- GENERAL SECTION STRUCTURING --- */
+        section {
+            padding: 90px 5% 60px 5%;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+
+        /* --- SECTION 1: ABOUT --- */
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 2.4;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.03);
+            border-right: 6px solid var(--primary);
+        }
+
+        /* --- SECTION 2: COURSES --- */
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .course-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 8px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .course-card h3 i {
+            color: var(--secondary);
+        }
+
+        .course-card ul {
+            list-style: none;
+        }
+
+        .course-card ul li {
+            position: relative;
+            padding-right: 25px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .course-card ul li::before {
+            content: "✺";
+            position: absolute;
+            right: 0;
+            color: var(--secondary);
+        }
+
+        /* --- SECTION 3: KIDS SPECIAL --- */
+        .kids-box {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f5eedc 100%);
+            border: 1px solid var(--secondary-light);
+            border-radius: 15px;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .kids-tag {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 8px 25px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        /* --- SECTION 4: FACULTY --- */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .member-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #eee;
+            transition: transform 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .member-card .role {
+            display: inline-block;
+            background-color: var(--secondary-light);
+            color: var(--primary-dark);
+            padding: 4px 15px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .member-card h4 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .member-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* --- SECTION 5: FEATURES & TIMING --- */
+        .info-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-block {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+
+        .info-block h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-block ul {
+            list-style: none;
+        }
+
+        .info-block ul li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+            font-size: 1.05rem;
+            padding-right: 15px;
+            position: relative;
+        }
+
+        .info-block ul li::before {
+            content: "◈";
+            position: absolute;
+            right: 0;
+            color: var(--secondary);
+            font-size: 0.8rem;
+            top: 12px;
+        }
+
+        /* --- SECTION 6: CONTACT --- */
+        .contact-panel {
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 12px;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .contact-panel h3 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            padding: 25px 20px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(205,162,80,0.25);
+            transition: background 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(205,162,80,0.1);
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .contact-item h4 {
+            color: var(--secondary-light);
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .phone-link {
+            display: block;
+            color: var(--white);
+            text-decoration: none;
+            direction: ltr;
+            font-size: 1.3rem;
+            margin-top: 8px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .phone-link:hover {
+            color: var(--secondary);
+        }
+
+        /* --- ENROLLMENT FORM --- */
+        .form-section {
+            background: var(--white);
+        }
+
+        .enrollment-form {
+            max-width: 900px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #fdfbf7, #f5eedc);
+            border: 1px solid var(--secondary-light);
+            border-radius: 16px;
+            padding: 50px 45px;
+            box-shadow: 0 8px 40px rgba(27,77,62,0.08);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .form-header .form-badge {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .form-header h3 {
+            color: var(--primary-dark);
+            font-size: 1.8rem;
+            font-family: 'Noto Nastaliq Urdu', serif;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .form-group label span.req {
+            color: #d9534f;
+            margin-right: 3px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 13px 16px;
+            border: 1.5px solid #dce3dc;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Noto Sans Arabic', sans-serif;
+            color: var(--text-main);
+            background: var(--white);
+            transition: border-color 0.3s, box-shadow 0.3s;
+            text-align: right;
+            direction: rtl;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(27,77,62,0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .form-divider {
+            border: none;
+            border-top: 1px dashed #c9d9c3;
+            margin: 25px 0;
+        }
+
+        .form-section-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-section-label i {
+            color: var(--secondary);
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            direction: rtl;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .radio-option input[type="radio"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            direction: rtl;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .checkbox-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--primary);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(27,77,62,0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(27,77,62,0.4);
+        }
+
+        .submit-btn i {
+            margin-left: 8px;
+        }
+
+        .form-note {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .form-note i {
+            color: var(--secondary);
+            margin-left: 5px;
+        }
+
+        /* Success message */
+        .success-msg {
+            display: none;
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            color: #155724;
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .success-msg i {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* --- FLOATING WHATSAPP --- */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            color: var(--white);
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            transform: translateY(-5px);
+            color: var(--white);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.7rem;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111;
+            color: #888;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95rem;
+            border-top: 2px solid #222;
+        }
+
+        footer span {
+            color: var(--secondary);
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                right: -100%;
+                width: 260px;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-dark);
+                flex-direction: column;
+                padding: 40px 20px;
+                gap: 20px;
+                transition: right 0.4s ease;
+                box-shadow: -5px 5px 15px rgba(0,0,0,0.15);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .nav-links a {
+                display: block;
+                font-size: 1.1rem;
+                border-bottom: 1px solid rgba(255,255,255,0.05);
+                padding-bottom: 10px;
+            }
+
+            .menu-toggle.active .bar:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+            .menu-toggle.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .menu-toggle.active .bar:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .enrollment-form {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            section { padding: 70px 20px 40px 20px; }
+            .whatsapp-btn { bottom: 20px; left: 20px; padding: 12px 20px; font-size: 1rem; }
+            .free-alert { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- --- STICKY NAVBAR --- -->
+    <nav class="navbar">
+        <div class="nav-logo">
+            <i class="fa-solid fa-book-quran"></i>
+            <span>تفسیر القرآن اکیڈمی</span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home" onclick="closeMenu()">ہوم پیج</a></li>
+            <li><a href="#about" onclick="closeMenu()">تعارفِ اکیڈمی</a></li>
+            <li><a href="#courses" onclick="closeMenu()">شعبہ جات و کورسز</a></li>
+            <li><a href="#kids" onclick="closeMenu()">بچوں کا پروگرام</a></li>
+            <li><a href="#faculty" onclick="closeMenu()">انتظامیہ و اساتذہ</a></li>
+            <li><a href="#features" onclick="closeMenu()">خصوصیات و اوقات</a></li>
+            <li><a href="#contact" onclick="closeMenu()">رابطہ</a></li>
+            <li><a href="#enroll" onclick="closeMenu()">داخلہ فارم</a></li>
+        </ul>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+    </nav>
+
+    <!-- --- HERO SECTION --- -->
+    <header id="home" class="hero">
+        <h1 class="urdu-heavy">تفسیر القرآن اکیڈمی & عربی عامیہ و فصحٰی انسٹیٹیوٹ</h1>
+        <h2>TAFSEER UL QURAAN ACADEMY & ARBI AMIYA-WA-FUS-HA INSTITUTE</h2>
+
+        <div class="top-lead urdu-heavy">
+            زیرِ سرپرستی: محترم دلاور مکی صاحب (مہتممِ اکیڈمی)
+        </div>
+
+        <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.95;">
+            ہمارا نصب العین ملت اسلامیہ میں تفسیر القرآن کو نشر و عام کرنا ہے۔
+        </p>
+    </header>
+
+    <!-- --- FREE EDUCATION BANNER --- -->
+    <div class="free-alert">
+        <i class="fa-solid fa-gift"></i> خوشخبری: اکیڈمی میں تمام تعلیمی کورسز بالکل فری (مفت) ہیں! کوئی فیس نہیں ہے۔
+    </div>
+
+    <!-- --- SECTION 1: ABOUT --- -->
+    <section id="about">
+        <div class="section-title">
+            <h2>اہمیت و تعارفِ علم تفسیر</h2>
+        </div>
+        <div class="about-content urdu-heavy">
+            آئیں! ہم قرآن حکیم کو ترجمہ و تفسیر کے ساتھ پڑھتے ہیں کیونکہ تمام مفسرین و محدثین کے نزدیک تفسیر ہی وہ واحد علم ہے جس کے ذریعے قرآن حکیم کی مبارک آیات کے معانی و مفاہیم کو درست طریقے سے سمجھا جا سکتا ہے۔
+        </div>
+    </section>
+
+    <!-- --- SECTION 2: COURSES --- -->
+    <section id="courses">
+        <div class="section-title">
+            <h2>شعبہ جات اور تعلیمی کورسز (للبنات)</h2>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3><i class="fa-solid fa-graduation-cap"></i> بنیادی شعبہ جات</h3>
+                <ul>
+                    <li>شعبہ تفسیر القرآن الکریم</li>
+                    <li>شعبہ تجوید و قرآءت</li>
+                    <li>شعبہ لغہ عربیہ</li>
+                </ul>
+            </div>
+            <div class="course-card">
+                <h3><i class="fa-solid fa-book-open"></i> کورسز کے اہم مضامین</h3>
+                <ul>
+                    <li>تفسیر کی بنیادی اہمیت</li>
+                    <li>مخارج الحروف کی درستگی</li>
+                    <li>قواعد اللغة العربية</li>
+                    <li>محادثة باللغة العربية (عربی بول چال)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SECTION 3: KIDS SPECIAL --- -->
+    <section id="kids">
+        <div class="section-title">
+            <h2>بچوں کے لیے خصوصی تعلیمی پروگرام</h2>
+        </div>
+        <div class="kids-box">
+            <div class="kids-tag">خصوصی تربیتی سلیبس</div>
+            <p class="urdu-heavy" style="font-size: 1.4rem; color: var(--primary-dark); font-weight: bold;">
+                عربی ۔ قاعدہ ۔ مخارج الحروف ۔ تجوید و قرآءت (تلقین) کے ساتھ بچوں کی بہترین بنیادی تربیت
+            </p>
+        </div>
+    </section>
+
+    <!-- --- SECTION 4: FACULTY & MANAGEMENT --- -->
+    <section id="faculty">
+        <div class="section-title">
+            <h2>انتظامیہ اور اساتذہ کرام</h2>
+        </div>
+        <div class="faculty-grid">
+            <div class="member-card" style="border-top: 3px solid var(--secondary);">
+                <span class="role">Mohtamim</span>
+                <h4>محترم دلاور مکی صاحب</h4>
+                <p>اکیڈمی کے مہتممِ اعلیٰ</p>
+            </div>
+            <div class="member-card">
+                <span class="role">Nazim</span>
+                <h4>مولانا حبیب اللہ صاحب</h4>
+                <p>ناظمِ امور اکیڈمی</p>
+            </div>
+            <div class="member-card">
+                <span class="role">Ustaz</span>
+                <h4>قاری امجد صاحب</h4>
+                <p>استادِ حفظ و ناظرہ</p>
+            </div>
+            <div class="member-card">
+                <span class="role">Mudira</span>
+                <h4>استاذہ شکیلہ عبدالعزیز</h4>
+                <p>جامعہ أم القرى مکہ مکرمہ</p>
+            </div>
+            <div class="member-card">
+                <span class="role">Lecturer</span>
+                <h4>استاذہ نور عبدالعزیز</h4>
+                <p>فیکلٹی لیکچرر</p>
+            </div>
+            <div class="member-card">
+                <span class="role">Teacher</span>
+                <h4>استاذہ آمنہ حسین</h4>
+                <p>معلمہ اکیڈمی</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SECTION 5: FEATURES & TIMING --- -->
+    <section id="features">
+        <div class="section-title">
+            <h2>اکیڈمی کی خصوصیات اور اوقاتِ کار</h2>
+        </div>
+        <div class="info-wrapper">
+            <div class="info-block">
+                <h3><i class="fa-solid fa-star" style="color:var(--secondary);"></i> تعلیمی سہولیات</h3>
+                <ul>
+                    <li>طالبات اور بچوں کے لیے ایئر کنڈیشنڈ ہال کی سہولت</li>
+                    <li>صاف ستھرا علمی ماحول اور خوشگوار تعلیمی فضا</li>
+                    <li>تجوید و قراءت کے ساتھ قرآن مجید پڑھانے کا خاص اہتمام</li>
+                    <li><strong>داخلے باقاعدہ جاری ہیں!</strong></li>
+                </ul>
+            </div>
+            <div class="info-block">
+                <h3><i class="fa-solid fa-clock" style="color:var(--secondary);"></i> کلاسز کے اوقات</h3>
+                <p class="urdu-heavy" style="font-size: 1.15rem; line-height: 3;">
+                    <strong>عمومی اوقات:</strong> دوپہر 2:00 بجے تا شام 6:00 بجے<br>
+                    <strong>کلاسز للبنات وقت:</strong> دوپہر 2:30 بجے تا شام 6:30 بجے
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SECTION 6: CONTACT --- -->
+    <section id="contact">
+        <div class="section-title">
+            <h2>رابطہ اور پتہ کی تفصیلات</h2>
+        </div>
+        <div class="contact-panel">
+            <h3 class="urdu-heavy">ہم سے رابطہ کریں</h3>
+            <p style="opacity:0.85; margin-top:5px;">کسی بھی سوال یا داخلے کے لیے نیچے دیے گئے ذرائع سے رابطہ کریں</p>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <h4>فون / واٹس ایپ</h4>
+                    <a class="phone-link" href="tel:+923001234567">+92 300 123 4567</a>
+                    <a class="phone-link" href="tel:+923111234567">+92 311 123 4567</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h4>پتہ / ایڈریس</h4>
+                    <p style="margin-top:8px; font-size:1.05rem; line-height:1.9;" class="urdu-heavy">
+                        تفسیر القرآن اکیڈمی، گلی نمبر ۵، سیکٹر G-10، اسلام آباد
+                    </p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>اوقاتِ دفتر</h4>
+                    <p style="margin-top:8px; font-size:1.05rem; line-height:2;" class="urdu-heavy">
+                        پیر تا جمعہ<br>
+                        صبح 10:00 تا شام 7:00 بجے
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- SECTION 7: ENROLLMENT FORM --- -->
+    <section id="enroll" class="form-section">
+        <div class="section-title">
+            <h2>داخلہ فارم</h2>
+        </div>
+
+        <div class="enrollment-form">
+            <div class="form-header">
+                <div class="form-badge">مفت داخلہ — بالکل فری</div>
+                <h3>آن لائن داخلہ فارم پُر کریں</h3>
+            </div>
+
+            <!-- Personal Info -->
+            <div class="form-section-label">
+                <i class="fa-solid fa-user"></i> ذاتی معلومات
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>طالبِ علم کا مکمل نام <span class="req">*</span></label>
+                    <input type="text" id="studentName" placeholder="مثلاً: فاطمہ بنتِ احمد" required>
+                </div>
+                <div class="form-group">
+                    <label>سرپرست / والدین کا نام <span class="req">*</span></label>
+                    <input type="text" id="guardianName" placeholder="مثلاً: احمد علی" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>عمر (سال میں) <span class="req">*</span></label>
+                    <input type="number" id="age" placeholder="مثلاً: 12" min="4" max="70" required>
+                </div>
+                <div class="form-group">
+                    <label>رابطہ نمبر (واٹس ایپ) <span class="req">*</span></label>
+                    <input type="tel" id="phone" placeholder="+92 300 0000000" dir="ltr" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>گھر کا پتہ</label>
+                <input type="text" id="address" placeholder="محلہ، گلی، شہر">
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Course Selection -->
+            <div class="form-section-label">
+                <i class="fa-solid fa-graduation-cap"></i> کورس کا انتخاب
+            </div>
+
+            <div class="form-group">
+                <label>مطلوبہ شعبہ / کورس <span class="req">*</span></label>
+                <select id="course" required>
+                    <option value="" disabled selected>-- شعبہ منتخب کریں --</option>
+                    <option value="tafseer">شعبہ تفسیر القرآن الکریم</option>
+                    <option value="tajweed">شعبہ تجوید و قرآءت</option>
+                    <option value="arabic">شعبہ لغہ عربیہ (عربی زبان)</option>
+                    <option value="kids">بچوں کا خصوصی تعلیمی پروگرام</option>
+                    <option value="all">تمام کورسز (مکمل پروگرام)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>طالب علم کی نوعیت <span class="req">*</span></label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="studentType" value="taliba"> طالبہ (خاتون)
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="studentType" value="bacha"> بچہ / بچی
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="studentType" value="online"> آن لائن داخلہ
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>ترجیحی وقت</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="timing" value="early"> دوپہر 2:00 — 4:00
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="timing" value="late"> شام 4:00 — 6:30
+                    </label>
+                </div>
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Education Info -->
+            <div class="form-section-label">
+                <i class="fa-solid fa-book"></i> تعلیمی پس منظر
+            </div>
+
+            <div class="form-group">
+                <label>قرآن پاک پڑھنے کی صلاحیت</label>
+                <select id="quranLevel">
+                    <option value="" disabled selected>-- موجودہ سطح بتائیں --</option>
+                    <option value="none">بالکل نہیں آتا</option>
+                    <option value="qaida">قاعدہ مکمل ہے</option>
+                    <option value="nazra">ناظرہ قرآن پڑھ سکتا/سکتی ہوں</option>
+                    <option value="hafiz">حافظِ قرآن</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>پہلے کہیں عربی یا تجوید پڑھی ہے؟</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="prevStudy" value="yes"> جی ہاں
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="prevStudy" value="no"> نہیں
+                    </label>
+                </div>
+            </div>
+
+            <hr class="form-divider">
+
+            <!-- Additional Info -->
+            <div class="form-section-label">
+                <i class="fa-solid fa-comment-dots"></i> اضافی معلومات
+            </div>
+
+            <div class="form-group">
+                <label>آپ نے اکیڈمی کے بارے میں کہاں سے جانا؟</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="source" value="friend"> دوست / رشتہ دار
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="source" value="whatsapp"> واٹس ایپ
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="source" value="facebook"> فیس بک
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="source" value="masjid"> مسجد / اعلان
+                    </label>
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="source" value="other"> دیگر
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>کوئی سوال یا خصوصی درخواست</label>
+                <textarea id="message" placeholder="آپ کا سوال یا پیغام یہاں لکھیں..."></textarea>
+            </div>
+
+            <button class="submit-btn" onclick="submitForm()">
+                <i class="fa-solid fa-paper-plane"></i>
+                فارم جمع کریں — داخلہ لیں
+            </button>
+
+            <p class="form-note">
+                <i class="fa-solid fa-lock"></i>
+                آپ کی معلومات محفوظ ہیں۔ داخلہ بالکل مفت ہے، کوئی فیس نہیں۔
+            </p>
+
+            <div class="success-msg" id="successMsg">
+                <i class="fa-solid fa-circle-check" style="color:#155724;"></i>
+                <strong>شکریہ! آپ کا فارم کامیابی سے موصول ہو گیا۔</strong><br>
+                ہماری ٹیم جلد از جلد آپ سے واٹس ایپ پر رابطہ کرے گی۔<br>
+                اللہ تعالیٰ آپ کو علمِ نافع سے نوازے۔ آمین
+            </div>
+        </div>
+    </section>
+
+    <!-- --- FLOATING WHATSAPP BUTTON --- -->
+    <a href="https://wa.me/923001234567?text=السلام%20علیکم%21%20تفسیر%20القرآن%20اکیڈمی%20میں%20داخلہ%20لینا%20چاہتا%2Fچاہتی%20ہوں۔" target="_blank" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp"></i> واٹس ایپ
+    </a>
+
+    <!-- --- FOOTER --- -->
+    <footer>
+        <p>© 2025 <span>تفسیر القرآن اکیڈمی & عربی عامیہ انسٹیٹیوٹ</span> — تمام حقوق محفوظ ہیں</p>
+        <p style="margin-top:8px;">زیرِ سرپرستی: محترم دلاور مکی صاحب</p>
+    </footer>
+
+    <script>
+        // --- HAMBURGER MENU TOGGLE ---
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+            document.getElementById('menuToggle').classList.toggle('active');
+        }
+
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('active');
+            document.getElementById('menuToggle').classList.remove('active');
+        }
+
+        // Close menu on outside click
+        document.addEventListener('click', function(e) {
+            const nav = document.getElementById('navLinks');
+            const toggle = document.getElementById('menuToggle');
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // --- FORM SUBMISSION ---
+        function submitForm() {
+            const name = document.getElementById('studentName').value.trim();
+            const guardian = document.getElementById('guardianName').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const course = document.getElementById('course').value;
+            const studentType = document.querySelector('input[name="studentType"]:checked');
+
+            // Simple Validation
+            if (!name) {
+                alert('براہ کرم طالب علم کا نام درج کریں۔');
+                document.getElementById('studentName').focus();
+                return;
+            }
+            if (!guardian) {
+                alert('براہ کرم سرپرست کا نام درج کریں۔');
+                document.getElementById('guardianName').focus();
+                return;
+            }
+            if (!age) {
+                alert('براہ کرم عمر درج کریں۔');
+                document.getElementById('age').focus();
+                return;
+            }
+            if (!phone) {
+                alert('براہ کرم رابطہ نمبر درج کریں۔');
+                document.getElementById('phone').focus();
+                return;
+            }
+            if (!course) {
+                alert('براہ کرم کورس منتخب کریں۔');
+                document.getElementById('course').focus();
+                return;
+            }
+            if (!studentType) {
+                alert('براہ کرم طالب علم کی نوعیت منتخب کریں۔');
+                return;
+            }
+
+            // Show success message
+            document.getElementById('successMsg').style.display = 'block';
+
+            // Scroll to success message
+            document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+            // In a real deployment, you would send data to a server here.
+            console.log('Form submitted:', {
+                studentName: name,
+                guardianName: guardian,
+                age: age,
+                phone: phone,
+                course: course,
+                type: studentType.value
+            });
+        }
+    </script>
+</body>
+</html>
